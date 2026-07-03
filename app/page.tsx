@@ -1,4 +1,4 @@
-import ProductOverview from "@/components/product-overview";
+import ProductOverview from "@/components/product-detail";
 
 export default function Home() {
   return (

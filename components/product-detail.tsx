@@ -8,7 +8,7 @@ import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '@/com
 import Image from 'next/image'
 import { ProductBreadcrumb } from './product-breadcrumb'
 import { Marker, MarkerContent, MarkerIcon } from './ui/marker'
-import { PaintBucket, Sun, Truck } from 'lucide-react'
+import { PaintBucket, ShoppingCart, Sun, Truck } from 'lucide-react'
 
 interface Product {
   id: string
@@ -75,7 +75,7 @@ const productDetails: Product = {
   ]
 }
 
-const ProductOverview = () => {
+export default function ProductDetail() {
   const [selectedImage, setSelectedImage] = useState(0)
   const [selectedSize, setSelectedSize] = useState<string | null>(productDetails.sizes[0])
   const [selectedColor, setSelectedColor] = useState(productDetails.colors[0])
@@ -217,9 +217,12 @@ const ProductOverview = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className='flex gap-4 mt-4'>
+            <div className='flex gap-2 mt-4'>
               <Button className="h-10 px-8 flex-1 cursor-pointer rounded-sm" size='lg'>
-                Buy now
+                Order now
+              </Button>
+              <Button size="icon-lg" className="rounded-sm cursor-pointer" variant="outline">
+                <ShoppingCart />
               </Button>
             </div>
 
@@ -260,5 +263,3 @@ const ProductOverview = () => {
     </div>
   )
 }
-
-export default ProductOverview
